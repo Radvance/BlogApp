@@ -1,0 +1,27 @@
+{% extends "@BaseTemplates/crud/index.html.twig" %}
+
+{% block index %}
+    {% if entities|length %}
+        <table class="table table-{{ name }}">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td>{{ entity.id }}</td>
+                    <td>{{ entity.name }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        There are no blogs
+    {% endif %}
+{% endblock %}
+
+{% block buttons %}
+    <!-- Additional buttons-->
+{% endblock %}

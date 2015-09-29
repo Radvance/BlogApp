@@ -1,0 +1,29 @@
+frontpage:
+    path: /
+    defaults:  { _controller: BlogApp\Controller\AppController::frontpageAction }
+
+# Authentication
+login:
+    path: /login
+    defaults:  { _controller: Radvance\Framework\Controller\AuthenticationController::loginAction }
+    
+login_check:
+    path: /authentication/login_check
+    
+assets:
+    path: "/.{postfix}"
+    requirements:
+        postfix: .+
+
+# Blogs
+
+blog_index:
+    path: /{accountName}
+    defaults:  { _controller: BlogApp\Controller\AppController::blogIndexAction }
+
+blog_view:
+    path: /{accountName}/{blogName}
+    defaults:  { _controller: BlogApp\Controller\AppController::blogViewAction }
+
+blog_add:
+    path: /addBlog
